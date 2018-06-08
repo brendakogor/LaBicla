@@ -1,0 +1,10 @@
+Modify Entry Log
+Delete Entry Log
+Password Validity
+
+
+Leer propiedades de archivo
+
+
+
+
