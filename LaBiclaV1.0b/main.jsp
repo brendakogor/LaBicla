@@ -8,10 +8,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="/LaBicla/css/bootstrap.css">
-<link rel="stylesheet" href="/LaBicla/css/bootstrap-theme.css">
-<script src="/LaBicla/js/bootstrap.min.js"></script>
-<script src="/LaBicla/js/validar.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validar.js"></script>
 <title>La Bicla</title>
 </head>
 <body>

@@ -10,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import mx.ipn.upiicsa.segsw.labicla.dao.UserDAO;
 import mx.ipn.upiicsa.segsw.labicla.util.Utility;
@@ -45,7 +47,9 @@ public class AutenticarServlet extends HttpServlet implements Servlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
+		String regexEmail = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = null;
 		if(Utility.containsAnEmptyValue(email, password))
 		{
 			
@@ -62,16 +66,24 @@ public class AutenticarServlet extends HttpServlet implements Servlet {
 			return;
 		}
 		
-		StringValueObject validateTheEmail = new StringValueObject(email);
-		StringValueObject validateThePassword = new StringValueObject(password);
-		if(validateTheEmail.getStatus() && validateThePassword.getStatus()) {
-		
 		
 		UserDAO dao = null;
 		UserValueObject user = null;
 		
 		try 
 		{
+			matcher = pattern.matcher(email);
+			if(matcher.matches() != true){
+				error = new ErrorValueObject();
+				
+				error.setMessage("Caracteres no validos");
+				error.setDescription("Se encontraron caracteres no validos");
+				
+				request.setAttribute("error", error);
+				
+				RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
+				rd.forward(request, response);
+			}
 			dao = new UserDAO();
 			user = dao.authenticate(email, password);
 			
@@ -156,8 +168,6 @@ public class AutenticarServlet extends HttpServlet implements Servlet {
 			if(dao != null) dao.closeConnection();
 
 		}
-		}//llave del if que agrege
-		
 	}
 
 }

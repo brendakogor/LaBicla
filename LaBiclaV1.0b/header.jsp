@@ -15,8 +15,8 @@
   <div>
 	<form action="" method="GET" name="autenticar">
 	<div>
-		Email <input type="text" name="email">
-		Password <input type="text" name="password"> 
+		Email <input type="text" name="email" id="user">
+        Password <input type="text" name="password" id="password"> 
 	</div>		
 		<input type="submit" value="Entrar" onclick="validar()">	
 		
@@ -37,7 +37,7 @@
 <div>
 	<%=user.getName()%>
 	<a href="get_blog_info.controller">Blog</a>
-	<a href="cambiarPass.jsp"> Cambiar Contraseña</a>
+	<a href="cambiarPass.jsp"> Cambiar Contraseï¿½a</a>
 	<a href="logout.controller">Salir</a>
 </div>
 <%
