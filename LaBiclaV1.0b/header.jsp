@@ -8,7 +8,6 @@
 
 <%
 	user = (UserValueObject) session.getAttribute("user");
-
 	if (user == null) // NO hay usuario firmado
 	{
 %>
@@ -23,11 +22,7 @@
 			
 			<a href="get_blog_info.controller">Blog</a>
 			<a href="register.jsp">Registrar</a>
-			
-			
 	</form>
-	
-
    </div>
 <%
 	} 

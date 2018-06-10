@@ -162,4 +162,31 @@ public class UserDAO extends DataAccessObject{
 			closeStatement(stmt);
 		}
 	}
+
+	public Boolean cambiarPassword(String email, String password) throws SQLException, DAOInitializationException
+	{
+		PreparedStatement stmt = null;
+		
+		String sql = "UPDATE users SET password = ? WHERE email = ?";
+		System.out.println("UserDAO.Update() - SQL - " + sql);
+		
+		try
+		{
+			stmt = prepareStatement(sql);
+
+			stmt.setString(1, password);
+			stmt.setString(2, email);
+			
+			stmt.executeUpdate();
+			
+			return true;
+		}
+		catch(SQLException se) {
+			return false;
+		}
+		finally
+		{
+			closeStatement(stmt);
+		}
+	}
 }

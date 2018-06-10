@@ -48,7 +48,7 @@ public class AutenticarServlet extends HttpServlet implements Servlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String regexEmail = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
-		Pattern pattern = Pattern.compile(regex);
+		Pattern pattern = Pattern.compile(regexEmail);
 		Matcher matcher = null;
 		if(Utility.containsAnEmptyValue(email, password))
 		{

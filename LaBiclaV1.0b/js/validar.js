@@ -1,19 +1,15 @@
 function validar(){
-	var u = document.getElementById("user").value;
-	var p = document.getElementById("password").value;
-	var invalidos = /'+|-+|"+/;
-	var validCharsEmail = /[a-z0-9]+[_|.]?[a-z0-9]@[a-z]+.[a-z][a-z][a-z]?$/;
-	var resUser = invalidos.test(u);
-	var resPassword = invalidos.test(p);
-	if(resPassword){
-    	alert("Un campo contiene uno o mas caracteres invalidos."); 	
-    }else if(!resUser){
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(!document.getElementById("email").value.match(mailformat)){
     	alert("Formato de correo invalido, intentalo de nuevo");
     }else{
     	alert("Proced to login");
     	document.autenticar.action = "autenticar.controller";
     }
 } 
+
+
+
 
 function passIguales(){
 	var x = document.getElementById("pass").value;

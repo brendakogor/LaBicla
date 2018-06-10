@@ -3,10 +3,10 @@
 
 <html>
 <head>
-	<link rel="stylesheet" href="/LaBicla/css/bootstrap.css">
-	<link rel="stylesheet" href="/LaBicla/css/bootstrap-theme.css">
-	<script src="/LaBicla/js/bootstrap.min.js"></script>
-	<script src="/LaBicla/js/validarn.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.css">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/validar.js"></script>
 
 	<title>La Bicla</title>
 </head>
@@ -17,14 +17,14 @@
 	
 		
 
-		<form action="" name ="cambiar" method="GET">
+		<form action="cambiarcontrasena.controller" name ="cambiar" method="GET">
 			<div class="form-group">
 	    		<label>Password actual:</label>
-	    		<input type="text" name="passActual" id="passActual" class="form-control">
+	    		<input type="text" name="oldpassword" id="passActual" class="form-control">
 			</div>
 			<div class="form-group">
 	    		<label>Nuevo password:</label>
-	    		<input type="text" name="pass" id="pass" class="form-control">
+	    		<input type="text" name="pass" id="newpassword" class="form-control">
 			</div>
 			<div>
 	    		<label>Confirmar nuevo password:</label>
