@@ -17,7 +17,7 @@
 	
 		
 
-		<form action="cambiarcontrasena.controller" name ="cambiar" method="GET">
+		<form action="cambiarcontrasena.controller" name ="cambiar" method="POST">
 			<div class="form-group">
 	    		<label>Password actual:</label>
 	    		<input type="text" name="oldpassword" id="passActual" class="form-control">
